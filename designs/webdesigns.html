@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>DESIGNS > WEB</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="container h-screen flex flex-col">
+        <menu class="p-6">
+            <ul class="flex justify-around items-center text-white font-medium">
+                <li class="hover:underline hover:text-[#FFF27E] hover:underline-offset-4 duration-150 ease-in-out"><a href="../about.html">ABOUT</a></li>
+                <li class="hover:underline hover:text-[#FFF27E] hover:underline-offset-4 duration-150 ease-in-out"><a href="../creatives.html">CREATIVES</a></li>
+                <li ><a href="index.html"><img src="../public/img/DIP_LOGO.png" width="74%"></a></li>
+                <li class="text-[#FFF27E] hover:underline hover:text-[#FFF27E] hover:underline-offset-4 duration-150 ease-in-out"><a href="../designs.html">DESIGNS</a></li>
+                <li class="hover:underline hover:text-[#FFF27E] hover:underline-offset-4 duration-150 ease-in-out"><a href="../code.html">CODE</a></li>
+            </ul>
+        </menu>
+        <div class="relative flex flex-auto justify-around items-center">
+            <div>
+                <button type="button" class="absolute bottom-5 left-20 inline-block px-6 py-2.5 bg-[#2A5048] text-white font-medium text-xs leading-tight uppercase hover:text-[#FFF27E] duration-150 ease-in-out" onclick="onPrev()">&lt; PREV</button>
+            </div>
+            <div class="flex justify-center items-center bg-white h-full w-full">
+                <a id="projectLink" href="https://www.figma.com/file/R7aHxU8rzSxR6VyEu7Y7M6/FeInvest?node-id=0%3A1&t=AQzpDt0aT3CcxGAo-1">
+                    <div>
+                        <img id="projectImage" src="../public/img/designs/FEINVEST-UI-MOCKUP.png" class="m-auto" width="51%"/>
+                    </div>
+                </a>
+            </div>
+            <div>
+                <button type="button" class="absolute bottom-5 right-20 inline-block px-6 py-2.5 bg-[#2A5048] text-white font-medium text-xs leading-tight uppercase hover:text-[#FFF27E] duration-150 ease-in-out" onclick="onNext()">NEXT &gt;</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const srcs = [
+            "https://www.figma.com/file/R7aHxU8rzSxR6VyEu7Y7M6/FeInvest?node-id=0%3A1&t=AQzpDt0aT3CcxGAo-1",
+            "https://www.figma.com/file/yXhJ6PoS1hlAKXu4eGaaOu/Storiyaan?node-id=0%3A1&t=aHGVP7D4O18myKKz-1",
+        ];
+        const imgs = [
+            "../public/img/designs/FEINVEST-UI-MOCKUP.png",
+            "../public/img/designs/STORIYAAN-UI-MOCKUP.png",
+        ];
+        let i = 0;
+        function onNext() {
+            i == srcs.length-1 ? i=0 : i=i+1;
+            document.getElementById("projectLink").href = srcs[i];
+            document.getElementById("projectImage").src = imgs[i];
+        }
+        function onPrev() {
+            i == 0 ? i=srcs.length-1 : i=i-1;
+            document.getElementById("projectLink").href = srcs[i];
+            document.getElementById("projectImage").src = imgs[i];
+        }
+    </script>
+
+</body>
+</html>
